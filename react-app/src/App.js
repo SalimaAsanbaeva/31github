@@ -20,7 +20,7 @@ function App() {
   const addNewPost = (e) => {
     e.preventDefault()
     console.log(title)
-    console.log(bodyInputRef.current.value)
+    console.log(bodyInputRef.current)
   }
   
   return (
@@ -33,12 +33,11 @@ function App() {
              type="text" 
              placeholder="Post title"
         />
-        <input ref={ bodyInputRef} type="text" />
-        {/* <MyInput
+        <MyInput
            ref={bodyInputRef}
            type="text" 
            placeholder="Post description"
-        /> */}
+        />
         <MyButton onClick={ addNewPost } >Create a post</MyButton>
       </form>
       <PostList posts={posts} title="List of posts" />
