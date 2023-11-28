@@ -1,8 +1,7 @@
 /* External dependencies */
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 /* Local dependencies */
-import PostItem from './components/PostItem';
 import './styles/App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';

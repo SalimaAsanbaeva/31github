@@ -1,20 +1,23 @@
-import React from 'react'
+/* External dependencies */
+import React, {useState } from "react";
 
-import MyButton from "./components/UI/button/MyButton";
-import MyInput from "./components/UI/input/MyInput";
+/* Local dependencies */
+import MyButton from "../components/UI/button/MyButton";
+import MyInput from "../components/UI/input/MyInput";
 
-function PostForm({create}) {
-    const [post, setPost] = useState({ title: "", body: "" });
+function PostForm({ create }) {
+  const [post, setPost] = useState({ title: "", body: "" });
 
-   const addNewPost = (e) => {
-     e.preventDefault();
-     const newPost = {
-       ...post, id: Date.now()
-     }
-     create(newPost)
-     setPost({ title: "", body: "" });
-   };
-  
+  const addNewPost = (e) => {
+    e.preventDefault();
+    const newPost = {
+      ...post,
+      id: Date.now(),
+    };
+    create(newPost);
+    setPost({ title: "", body: "" });
+  };
+
   return (
     <form>
       {/*Controlled component*/}
@@ -35,4 +38,4 @@ function PostForm({create}) {
   );
 }
 
-export default PostForm
+export default PostForm;
