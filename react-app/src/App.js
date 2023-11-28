@@ -14,13 +14,13 @@ function App() {
     { id: 2, title: 'Javascript 2', body: 'Description' },
     { id: 3, title: 'Javascript 3', body: 'Description' },
   ]); 
-  const [title, setTitle] = useState('')
-  const bodyInputRef = useRef();
+  const [post, setPost] = useState({title: '', body: ''});
+  
 
   const addNewPost = (e) => {
     e.preventDefault()
-    console.log(title)
-    console.log(bodyInputRef.current)
+    setPosts([...posts, {...post, id: Date.now()}])
+    setPost({title: '', body: ''})
   }
   
   return (
@@ -28,13 +28,14 @@ function App() {
       <form>
         { /*Controlled component*/}
         <MyInput
-          value={title}
-          onChange={e => setTitle(e.target.value)}
+             value={post.title}
+             onChange={e => setPost({...post, title: e.target.value})}
              type="text" 
              placeholder="Post title"
         />
         <MyInput
-           ref={bodyInputRef}
+           value={post.body}
+           onChange={e => setPost({...post, body: e.target.value})}
            type="text" 
            placeholder="Post description"
         />
