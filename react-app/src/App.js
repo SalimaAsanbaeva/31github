@@ -27,7 +27,7 @@ function App() {
       {posts.length !== 0 ? (
         <PostList remove={removePost} posts={posts} title="List of posts" />
       ) : (
-        <div>posts not found</div>
+          <h1 style={{ textAlign:"center"}}>posts not found !</h1>
       )}
     </div>
   );
