@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import './styles/App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
+import MySelect from './components/UI/select/MySelect';
 
 function App() {
   const [posts, setPosts] = useState([
@@ -26,10 +27,10 @@ function App() {
       <PostForm create={createPost} />
       <hr style={{margin: '15px'}} />
       <div>
-        <select>
-          <option value="value1">by name</option>
-          <option value="value1">by description</option>
-        </select>
+        <MySelect
+          defaultValue="Sorting"
+          options={[]}
+        />
       </div>
       {posts.length !== 0 ? (
         <PostList remove={removePost} posts={posts} title="List of posts" />
