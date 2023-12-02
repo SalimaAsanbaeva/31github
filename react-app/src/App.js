@@ -24,10 +24,17 @@ function App() {
   return (
     <div className="App">
       <PostForm create={createPost} />
+      <hr style={{margin: '15px'}} />
+      <div>
+        <select>
+          <option value="value1">by name</option>
+          <option value="value1">by description</option>
+        </select>
+      </div>
       {posts.length !== 0 ? (
         <PostList remove={removePost} posts={posts} title="List of posts" />
       ) : (
-          <h1 style={{ textAlign:"center"}}>posts not found !</h1>
+        <h1 style={{ textAlign: "center" }}>posts not found !</h1>
       )}
     </div>
   );
