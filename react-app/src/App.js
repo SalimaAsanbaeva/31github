@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 
 /* Local dependencies */
 import "./styles/App.css";
@@ -11,8 +11,8 @@ import MyButton from "./components/UI/button/MyButton";
 import { usePosts } from "./hooks/usePosts";
 
 function App() {
-  const [posts, setPosts] = useState([]);
-  const [filter, setFilter] = useState({ sort: "", query: "" });
+  const [posts, setPosts] = useState([ ]);
+  const [filter, setFilter] = useState({ sort: ' ', query: '' });
   const [modal, setModal] = useState(false);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
